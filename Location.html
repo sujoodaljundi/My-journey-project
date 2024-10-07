@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Destinations</title>
+    <link rel="icon" href="./files/myjourney.png" />
+    <link rel="stylesheet" href="./styles/Location.css" />
+  </head>
+
+  <body class="location-body">
+    <header>
+      <nav id="guestNavbar">
+        <a href="./index.html" class="logo">
+          <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"
+        /></a>
+        <ul class="navbar">
+          <li>
+            <a href="./index.html">Home</a>
+            <a href="./Location.html">Locations</a>
+            <a href="./index.html#aboutus">About Us</a>
+            <a href="./index.html#contact">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="auth-navbar">
+          <li>
+            <a href="./register.html">Register</a>
+            <span style="color: white">|</span>
+            <a href="./register.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav id="userNavbar" style="display: none">
+        <a href="./index.html" class="logo">
+          <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"
+        /></a>
+        <ul class="navbar">
+          <li>
+            <a href="./index.html">Home</a>
+            <a href="./Location.html">Locations</a>
+            <a href="./index.html#aboutus">About Us</a>
+            <a href="./index.html#contact">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="auth-navbar">
+          <li>
+            <a href="./profile.html">Profile</a>
+            <span style="color: white">|</span>
+            <a id="logout" style="color: white">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="locations" id="locations">
+      <div class="package-title">
+        <h2>Explore Beautiful Destinations</h2>
+      </div>
+      <div class="location-card">
+        <a href="#" target="_blank" name="India">
+          <div class="col-content">
+            <img src="./files/l1.jpg" alt="India" />
+            <div class="location-info">
+              <h5>India</h5>
+              <p>Kashmir</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" name="Turkey">
+          <div class="col-content">
+            <img src="./files/l2.jpg" alt="Turkey" />
+            <div class="location-info">
+              <h5>Turkey</h5>
+              <p>Istanbul</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" name="fr">
+          <div class="col-content">
+            <img src="./files/l3.jpg" alt="France" />
+            <div class="location-info">
+              <h5>France</h5>
+              <p>Paris</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" name="Indonesia">
+          <div class="col-content">
+            <img src="./files/l4.jpg" alt="Indonesia" />
+            <div class="location-info">
+              <h5>Indonesia</h5>
+              <p>Bali</p>
+            </div>
+          </div>
+        </a>
+        <a href="#" target="_blank" name="Dubai">
+          <div class="col-content">
+            <img src="./files/l5.jpg" alt="UAE" />
+            <div class="location-info">
+              <h5>United Arab Emirates</h5>
+              <p>Dubai</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" name="Switzerland">
+          <div class="col-content">
+            <img src="./files/l6.jpg" alt="Switzerland" />
+            <div class="location-info">
+              <h5>Switzerland</h5>
+              <p>Geneva</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" name="Andaman & Nicobar">
+          <div class="col-content">
+            <img src="./files/l7.jpg" alt="Indonesia" />
+            <div class="location-info">
+              <h5>Andaman & Nicobar</h5>
+              <p>Port Blair</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" name="Italy">
+          <div class="col-content">
+            <img src="./files/l8.jpg" alt="Indonesia" />
+            <div class="location-info">
+              <h5>Italy</h5>
+              <p>Rome</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="footer-content">
+        <a href="./ourTeam.html">Our Team</a>
+        <a
+          href="https://github.com/samiyaseen3/Travel-Project.git"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i> Github
+        </a>
+        <p>&copy; 2024 MyJourney. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
+      const locPage = document.querySelectorAll(".location-card a");
+
+      locPage.forEach((loc) => {
+        loc.addEventListener("click", (event) => {
+          event.preventDefault();
+          if (
+            loggedInUserEmail &&
+            users.some((user) => user.email === loggedInUserEmail)
+          ) {
+            const countryName = loc.getAttribute("name");
+            window.location.href = `hotel.html?country=${countryName}`;
+          } else {
+            window.location.href = "./register.html";
+          }
+        });
+      });
+    </script>
+    <script src="./js_files/navbar.js"></script>
+  </body>
+</html>

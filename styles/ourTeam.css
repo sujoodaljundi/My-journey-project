@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #aaaaaa40;
+}
+
+/******************************Navbar************************************/
+
+nav {
+  width: 100%;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6998AB;
+}
+
+nav .logo img {
+  width: 90px;
+  height: auto;
+  flex-shrink: 0;
+  flex: 1;
+
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+
+  margin-top: 30px;
+}
+
+.auth-navbar {
+  margin-top: 30px;
+}
+
+.auth-navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  flex: 3;
+
+}
+
+
+.auth-navbar li {
+  display: inline-block;
+  align-items: center;
+  margin-left: 15px;
+
+}
+
+.auth-navbar a,
+.navbar a {
+
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: ease 0.40s;
+  padding-top: 40px;
+}
+
+.auth-navbar a {
+  padding: 0px 20px;
+}
+
+.navbar a {
+  padding: 0px 30px;
+}
+
+.navbar a:hover,
+.navbar a.active,
+.auth-navbar a:hover,
+.auth-navbar a.active {
+
+  box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #bad1da;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+/***********************************************************/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.column {
+  width: 30%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px black;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 18em;
+  position: relative;
+  margin-top: 20%;
+  padding-bottom: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(154, 213, 228, 0.8);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid white;
+}
+
+h1 {
+  color: #3e7a91;
+  text-align: center;
+  margin: 1em;
+}
+
+.container {
+  padding: 70px 16px 16px;
+}
+
+.title {
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: #3e7a91;
+  text-align: center;
+  width: 30%;
+  transition: background-color 0.3s;
+  margin-top: 2em;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.button:hover {
+  background-color: #3e7a9156;
+}
+
+.social_icon:hover {
+  transform: translateY(-10px);
+}
+
+
+
+/*Footer*/
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #6998AB;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 15px;
+  transition: all 0.5s ease;
+}
+
+.footer-content a i {
+  margin-right: 5px;
+}
+
+.footer-content a:hover {
+  font-size: 1.2rem;
+}
+
+.footer-content p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+
+/* nav bar  */
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .navbar {
+      display: block;
+      text-align: center;
+  }
+
+  .navbar li {
+      margin: 10px 0;
+  }
+  
+
+  .auth-navbar {
+      display: block;
+      margin-top: 10px;
+  }
+
+  .auth-navbar li {
+      margin: 5px 0;
+  }
+
+  /* Flexbox for better alignment */
+  nav {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none; /* Hidden by default */
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Show menu button on mobile */
+@media (max-width: 768px) {
+  .menu-btn {
+      display: block;
+      margin-bottom: 10px;
+  }
+
+  .navbar a {
+      padding: 0px 10px;
+  }
+
+  .navbar.active,
+  .auth-navbar.active {
+      display: block; /* Show when active */
+  }
+}

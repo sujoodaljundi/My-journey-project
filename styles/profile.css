@@ -1,0 +1,302 @@
+nav {
+    width: 100%;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #6998AB;
+}
+
+nav .logo img {
+    width: 90px;
+    height: auto;
+    flex-shrink: 0;
+    flex: 1;
+
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    margin-top: 30px;
+}
+
+.auth-navbar {
+    margin-top: 30px;
+}
+
+.auth-navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    flex: 3;
+
+}
+
+
+.auth-navbar li {
+    display: inline-block;
+    align-items: center;
+    margin-left: 15px;
+
+}
+
+.auth-navbar a,
+.navbar a {
+
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: ease 0.40s;
+    padding-top: 40px;
+}
+
+.auth-navbar a {
+    padding: 0px 20px;
+}
+
+.navbar a {
+    padding: 0px 30px;
+}
+
+.navbar a:hover,
+.navbar a.active,
+.auth-navbar a:hover,
+.auth-navbar a.active {
+
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #bad1da;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+#logout {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.user-email {
+    color: #666;
+}
+
+.guest-info {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.guest-card {
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: left;
+}
+
+.user-details {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.info-card {
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.info-card p {
+    margin: 5px 0;
+}
+
+.bookings {
+    margin-top: 20px;
+}
+
+.booking-item {
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.country-name,
+.rest-name {
+    margin: 0;
+    color: #6998AB;
+}
+
+.booking-date {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.booking-description {
+    font-size: 1em;
+    color: #333;
+}
+
+/*Footer*/
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #6998AB;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    transition: all 0.5s ease;
+}
+
+.footer-content a i {
+    margin-right: 5px;
+}
+
+.footer-content a:hover {
+    font-size: 1.2rem;
+}
+
+.footer-content p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-name {
+        font-size: 1.2em;
+    }
+
+    .guest-card,
+    .info-card {
+        padding: 10px;
+    }
+
+    .booking-item {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-name {
+        font-size: 1em;
+    }
+
+    .booking-description {
+        font-size: 0.9em;
+    }
+}
+
+
+/* nav bar  */
+
+/* Responsive styles */
+@media (max-width: 800px) {
+    .navbar {
+        display: block;
+        text-align: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+    
+
+    .auth-navbar {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .auth-navbar li {
+        margin: 5px 0;
+    }
+
+    /* Flexbox for better alignment */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile menu button */
+.menu-btn {
+    display: none; /* Hidden by default */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Show menu button on mobile */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .navbar a {
+        padding: 0px 10px;
+    }
+
+    .navbar.active,
+    .auth-navbar.active {
+        display: block; /* Show when active */
+    }
+}
